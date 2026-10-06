@@ -89,7 +89,7 @@ input[type=range]{accent-color:var(--accent);flex:1;min-width:0;max-width:60%}
 </div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-const VERSION='0.8.5';
+const VERSION='0.8.6';
 const W=640,H=480;
 const $=id=>document.getElementById(id);
 const canvas=$('c');$('ver').textContent='v'+VERSION;
@@ -680,7 +680,7 @@ if(d<r){if(d>1e-4){P.x=nx+dx/d*r;P.z=nz+dz/d*r}else{const o=[P.x-c[0],c[1]-P.x,P
 }
 function inHouse(x,z){return x>5.15&&x<14.85&&z>-89.85&&z<-78.15}
 
-function nearestListen(){let best=null,bd=1e9;
+function nearestListen(){const c=S.listening;if(c&&keys['KeyE']&&!c.done){if(c.eco?Math.hypot(P.x-c.fx,P.z-c.fz)<3.2:Math.hypot(P.x-c.x,P.z-c.z)<3.6)return c}let best=null,bd=1e9;
 VOICES.forEach(v=>{if(!v.active||v.done||!here(v))return;const d=Math.hypot(P.x-v.x,P.z-v.z);if(d<3&&d<bd){bd=d;best=v}});
 S.ecos.forEach(e=>{if(e.heard)return;const d=Math.hypot(P.x-e.fx,P.z-e.fz);if(d<2.5&&d<bd){bd=d;best=e}});return best}
 function fragText(id){return FR[id].text}
@@ -1115,7 +1115,7 @@ function startViudas(){clearSay();S.zone='plaza';S.ch='plaza';S.camOverride=null
 WIDOWS.forEach(w=>{w.g.visible=true;w.silent=false;w.g.position.set(w.hx,0,w.hz);w.rebozo.visible=false});VOICES.forEach(v=>{if(v.zone==='plaza'&&!v.never)v.active=true});zoneLights();ambTo(0.5);say([['',T('widowsIntro')]])}
 function updWidows(dt){let n=0;WIDOWS.forEach(w=>{const g=w.g;if(w.silent){if(g.visible){w.sinkT+=dt;g.position.y=-w.sinkT*1.1;if(w.sinkT>1.8)g.visible=false}return}if(!g.visible)return;
 const dx=P.x-g.position.x,dz=P.z-g.position.z,d=Math.hypot(dx,dz);let mv=false;if(d<15&&d>1.5&&S.listening!==w.v&&S.mode==='play'){g.position.x+=dx/d*0.42*dt;g.position.z+=dz/d*0.42*dt;mv=true}g.rotation.y=Math.atan2(dx,dz);animWalk(w,S.t*3.5+w.ph,mv?0.28:0);if(d<2.3)n++;
-w.v.x=g.position.x;w.v.z=g.position.z;if(w.v.a&&w.v.a.pan&&(w.v.a.pan.positionX||w.v.a.pan.setPosition))setPos(w.v.a.pan,w.v.x,1.4,w.v.z)});P.spMul=Math.max(0.4,1-n*0.2)}
+w.v.x=g.position.x;w.v.z=g.position.z;if(w.v.a&&w.v.a.pan&&(w.v.a.pan.positionX||w.v.a.pan.setPosition))setPos(w.v.a.pan,w.v.x,1.4,w.v.z)});const L=WIDOWS.filter(w=>w.g.visible&&!w.silent),M=2.8;for(let k=0;k<3;k++)for(let i=0;i<L.length;i++)for(let j=i+1;j<L.length;j++){const A1=L[i].g.position,B1=L[j].g.position;let dx=B1.x-A1.x,dz=B1.z-A1.z,d=Math.hypot(dx,dz);if(d<1e-4){dx=1;dz=0;d=1e-4}if(d<M){const la=S.listening===L[i].v,lb=S.listening===L[j].v,q=(M-d)/d,qa=la?0:lb?q:q/2,qb=lb?0:la?q:q/2;A1.x-=dx*qa;A1.z-=dz*qa;B1.x+=dx*qb;B1.z+=dz*qb}}L.forEach(w=>{w.v.x=w.g.position.x;w.v.z=w.g.position.z;if(w.v.a&&w.v.a.pan&&(w.v.a.pan.positionX||w.v.a.pan.setPosition))setPos(w.v.a.pan,w.v.x,1.4,w.v.z)});P.spMul=Math.max(0.4,1-n*0.2)}
 function startSilence(){S.ch='5d';if(A.ctx){const t=A.ctx.currentTime;A.pastAmb.gain.cancelScheduledValues(t);A.pastAmb.gain.setTargetAtTime(0,t,0.8)}ambTo(0);seq([[3.5,()=>{VOICES.find(v=>v.id==='madre2').active=true}]])}
 function neverFail(){S.zf.never=(S.zf.never||0)+1;say([['',T('cantSilence')]]);if(S.zf.never===1)seq([[4.5,()=>{S.lock=true;say([['',T('end5a'),()=>seq([[1.5,()=>endGame(endCard5())]])]])}]])}
 const BOOK=Object.keys(I18N.es.fr);
