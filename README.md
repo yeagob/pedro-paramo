@@ -4,7 +4,7 @@
 
 Prueba de concepto de un videojuego basado en **Pedro Páramo**, la novela de Juan Rulfo (1955), contada como un survival horror de la primera PlayStation al estilo de *Silent Hill* (1999): polígonos mínimos, niebla, voces que murmuran y un pueblo donde todos están muertos.
 
-**Jugar en el navegador:** VERCEL_URL
+**Jugar en el navegador:** https://pedro-paramo.vercel.app
 
 Disponible en **español, catalán e inglés**, con voces generadas en local. Usa auriculares.
 
