@@ -2,7 +2,7 @@
 
 > *Vine a Comala porque me dijeron que acá vivía mi padre, un tal Pedro Páramo.*
 
-Prueba de concepto de un videojuego basado en **Pedro Páramo**, la novela de Juan Rulfo (1955), contada como un survival horror de la primera PlayStation al estilo de *Silent Hill* (1999): polígonos mínimos, niebla, voces que murmuran y un pueblo donde todos están muertos.
+Videojuego basado en **Pedro Páramo**, la novela de Juan Rulfo (1955), contada como un survival horror de la primera PlayStation al estilo de *Silent Hill* (1999): polígonos mínimos, niebla, voces que murmuran y un pueblo donde todos están muertos.
 
 **Jugar en el navegador:** https://pedro-paramo.vercel.app
 
@@ -12,7 +12,7 @@ Disponible en **español, catalán e inglés**, con voces generadas en local. Us
 
 ## Qué se juega
 
-Cinco capítulos, cada uno con una forma distinta de jugar:
+Doce capítulos, cada uno con una forma distinta de jugar:
 
 | Capítulo | Qué cuenta | Cómo se juega |
 | --- | --- | --- |
@@ -21,8 +21,17 @@ Cinco capítulos, cada uno con una forma distinta de jugar:
 | 3. Miguel Páramo | El velorio, el padre Rentería y las monedas. | Sigilo amable en el velorio, jugar como Rentería y buscar las monedas en el retablo. |
 | 4. La infancia de Pedro | Pedro niño, Susana, los papalotes y la puerta. | Pensar para viajar, volar un papalote al ritmo del viento y seguirlo hasta casa. |
 | 5. La Media Luna | Pedro se hace dueño de todo. | Una elección que no es elección, una cerca que te sigue y una plaza que hay que callar. |
+| 6. Damiana | Damiana Cisneros lleva a Juan por el pueblo de noche. | Seguir la luz de su farol: fuera de ella el aire se acaba antes. |
+| 7. Donis y su hermana | Los hermanos, el lodo y los murmullos de la plaza. | Huir del lodo hasta la puerta y caminar entre los murmullos. |
+| 8. La tumba | Juan, enterrado junto a Dorotea, oye a Susana San Juan. | Girar la cabeza y tirar de las voces; tirar cuesta aliento. |
+| 9. Susana San Juan | La mina, el mar y las campanas. | Bajar a Susana por la cuerda, perseguir una cama que se aleja y callar una fiesta. |
+| 10. La Revolución | Los alzados llegan a la Media Luna. | Esconderse de los jinetes tras las piedras; si te ven, vuelves a la última. |
+| 11. Comala se muere de hambre | Pedro se cruza de brazos. | No hacer nada mientras el pueblo se vacía a tu paso. |
+| 12. El final | Abundio y Pedro Páramo. | Recordar sentado, una última elección y unos últimos pasos. |
 
-Hay secretos escondidos para quien conozca los juegos de 1999.
+Hay secretos escondidos para quien conozca los juegos de 1999, y un final que conviene no leer antes de jugar.
+
+La partida se guarda sola en el navegador al empezar cada capítulo; al abrir el juego puedes elegir entre continuar o empezar una partida nueva.
 
 | | |
 | --- | --- |
@@ -41,7 +50,8 @@ Hay secretos escondidos para quien conozca los juegos de 1999.
 | Mantener E | Escuchar, pensar, callar |
 | Pulsar E | Usar o leer |
 | Tab | Abrir el libro de fragmentos |
-| Mantener Esc | Menú: pausa, opciones, controles y momentos |
+| A/D o ratón | Girar la cabeza en la tumba |
+| Mantener Esc | Menú: pausa, opciones y controles |
 
 ## Jugar en local
 
@@ -70,7 +80,7 @@ docs/               capturas y notas de diseño
 
 ### Editar el juego
 
-`index.html` se genera a partir de `fuente/`: la base de los capítulos 1 y 2 (`index_v070.html`) más los capítulos 3 a 5 y las correcciones (`ch_main.js`, `ch_update.js`, `ch_i18n.js`). Edita esas piezas y regenera:
+`index.html` se genera a partir de `fuente/`: la base de los capítulos 1 y 2 (`index_v070.html`), los capítulos 3 a 5 y las correcciones (`ch_main.js`, `ch_update.js`, `ch_i18n.js`) y los capítulos 6 a 12, el guardado y los créditos (`ch_end.js`, `ch_i18n2.js`). Edita esas piezas y regenera:
 
 ```bash
 python3 fuente/patch8.py
@@ -84,10 +94,12 @@ node pruebas/probar-momentos.js                 # abre cada momento y guarda una
 LANGS=es,ca,en node pruebas/probar-momentos.js  # en los tres idiomas
 ```
 
-En `fuente/pruebas-dev/` hay un jugador automático (`auto.js`) que recorre el juego siguiendo los objetivos y avisa si se atasca o cae.
+Los momentos de cada capítulo se abren desde el menú añadiendo `?admin=true` a la dirección. En `fuente/pruebas-dev/` hay jugadores automáticos (`auto.js` y `auto9.js`, para los capítulos 6 a 12) que recorre el juego siguiendo los objetivos y avisa si se atasca o cae.
 
-## Autores
+## Créditos
 
-Hecho a cuatro manos por **Santiago** ([@yeagob](https://github.com/yeagob)) y **Claude** (Anthropic), conversando capítulo a capítulo: él ponía la visión, las referencias y las pruebas; Claude el diseño, el código, las voces y las pruebas automáticas.
+- **Obra original:** *Pedro Páramo*, de Juan Rulfo (1955).
+- **Diseño, código, arte, sonido y voces:** Claude (Anthropic).
+- **AI engineer:** Santiago ([@yeagob](https://github.com/yeagob)), que hizo de puente entre Claude y la obra.
 
 Proyecto de fans sin ánimo de lucro. *Pedro Páramo* es obra de Juan Rulfo; los fragmentos citados pertenecen a sus herederos.

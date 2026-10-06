@@ -7,7 +7,7 @@ const types={'.html':'text/html','.js':'application/javascript','.mp3':'audio/mp
 const server=http.createServer((q,r)=>{const f=path.join(root,decodeURIComponent(q.url.split('?')[0]));if(!f.startsWith(root)||!fs.existsSync(f)||fs.statSync(f).isDirectory()){r.writeHead(404);return r.end()}r.writeHead(200,{'Content-Type':types[path.extname(f)]||'application/octet-stream'});fs.createReadStream(f).pipe(r)});
 const out=path.resolve(__dirname,'capturas');
 const three=process.env.THREE_LOCAL;
-const moments=(process.env.MOMENTS||'camino,comala,eduviges,caballo,pasado,puzle,ecos,final,velorio,renteria,retablo,excusado,papalote,puerta,fulgor,cerca,viudas').split(',');
+const moments=(process.env.MOMENTS||'camino,comala,eduviges,caballo,pasado,puzle,ecos,final,velorio,renteria,retablo,excusado,papalote,puerta,fulgor,cerca,viudas,damiana,donis,murmullos,tumba,mina,mar,campanas,revolucion,hambre,silla,abundio').split(',');
 const langs=(process.env.LANGS||'es').split(',');
 (async()=>{
 fs.mkdirSync(out,{recursive:true});

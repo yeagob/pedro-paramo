@@ -1,6 +1,6 @@
 VKEYS.push('r1','r2','r3','ab1','pn1','pn2','su1','f1','f2','f3','dPayR','dSellR','p5a','p5b','p5c');
 const Z3=300,ZC=400,Z4=500,Z5=600;
-function zoneH(x,z){if(x>Z4-60&&x<Z4+60)return 8*Math.exp(-((x-Z4)**2+(z+50)**2)/338);return 0}
+function zoneH(x,z){const e=endH(x,z);if(e!==null)return e;if(x>Z4-60&&x<Z4+60)return 8*Math.exp(-((x-Z4)**2+(z+50)**2)/338);return 0}
 function here(v){return v.zone?v.zone===S.zone:(S.zone==='comala'&&v.past===S.past)}
 const PAL={wake:{bg:0x060508,fog:0x0e0a08,near:5,far:20,hs:0x8a7a64,hg:0x1e120a,hi:0.8,sc:0xffc080,si:0.15,dust:0x806040,dop:0.25},
 churchN:{bg:0x05060d,fog:0x0a0b16,near:5,far:22,hs:0x3a4a7a,hg:0x1a0808,hi:0.5,sc:0x6070b0,si:0.25,dust:0x60607a,dop:0.3},
@@ -167,12 +167,12 @@ A.rainG=ctx.createGain();A.rainG.gain.value=0;A.rainG.connect(A.zone);let s=loop
 A.roofG=ctx.createGain();A.roofG.gain.value=0;A.roofG.connect(A.zone);s=loopSrc(A.noise);f=ctx.createBiquadFilter();f.type='bandpass';f.frequency.value=600;f.Q.value=0.8;s.connect(f);f.connect(A.roofG);
 A.windH=ctx.createGain();A.windH.gain.value=0;A.windH.connect(A.zone);s=loopSrc(A.noise);f=ctx.createBiquadFilter();f.type='lowpass';f.frequency.value=600;s.connect(f);f.connect(A.windH)}
 function zoneAudioUpd(dt){if(!A.ctx||!A.zone)return;const k=Math.min(1,dt*2);const think=S.listening&&S.listening.id==='pensar'?S.listenT:0;
-A.chant.gain.value+=((S.zone==='wake'&&S.ros&&S.ros.ph==='pray'?0.5:0)-A.chant.gain.value)*Math.min(1,dt*4);
+A.chant.gain.value+=((S.zone==='wake'&&S.ros&&S.ros.ph==='pray'?0.5:(S.zf.chant||0))-A.chant.gain.value)*Math.min(1,dt*4);
 A.rainG.gain.value+=((S.rain?(S.fixedCam?0.1:0.35)*(1-think):0)-A.rainG.gain.value)*k;A.roofG.gain.value+=((S.rain&&S.fixedCam?0.45*(1-think):0)-A.roofG.gain.value)*k;
 A.windH.gain.value+=((S.zone==='child'&&!S.fixedCam?0.1+S.windT*0.45:0)-A.windH.gain.value)*k}
 function ambTo(v){if(A.ctx){const t=A.ctx.currentTime;A.amb.gain.cancelScheduledValues(t);A.amb.gain.setTargetAtTime(v,t,0.4)}}
 function zoneLights(){wakeL.intensity=S.zone==='wake'?2.4:0;churchL.intensity=S.zone==='churchN'?1.5:(S.zone==='churchD'?0.3:0);houseL.intensity=S.zone==='child'&&(S.ch==='4c'||S.ch==='4grow')?1.3:0}
-function setAvatar(a){[juan,rentPL,nino,pedroPL].forEach(m=>m.g.visible=m===a);PL=a;P.sc=a===nino?0.62:1;if(a!==juan)S.breath=1}
+function setAvatar(a){[juan,rentPL,nino,pedroPL,...extraAv()].forEach(m=>m.g.visible=m===a);PL=a;P.sc=a===nino||a===susK?0.62:1;if(a!==juan)S.breath=1}
 function place(x,z,rot){P.x=x;P.z=z;P.rot=rot;P.y=groundH(x,z);P.amp=0;PL.g.position.set(x,P.y,z);PL.g.rotation.set(0,rot,0);cam.yaw=rot+Math.PI;cam.pitch=0.45;cam.pos.set(x+Math.sin(cam.yaw)*cam.dist,P.y+3,z+Math.cos(cam.yaw)*cam.dist);S.hist=[];S.check={x,z}}
 function tell(lines){for(let i=queue.length-1;i>0;i--)if(!queue[i][0]&&queue[i].length<3)queue.splice(i,1);const showing=subT>0&&queue.length>0;if(showing&&!queue[0][0]&&!queue[0].cb)subT=Math.min(subT,0.01);queue.splice(showing?1:0,0,...lines)}
 function clearSay(){queue.length=0;subT=0;$('sub').innerHTML=''}
@@ -186,7 +186,7 @@ setAvatar(juan);nino.g.scale.setScalar(0.62);nino.head.scale.setScalar(1.3);susa
 VOICES.forEach(v=>{if(v.zone){v.active=false;v.done=false;delete S.frags[v.id]}});
 rentN.g.visible=false;coinG.visible=false;pedroN.g.rotation.y=0;kiteG.visible=false;kiteLine.visible=false;ufo.visible=false;doorPiv.rotation.y=0;doorGlow.visible=false;ohMat.opacity=1;
 hangT.g.visible=false;hangRope.visible=false;eduviges.g.visible=true;WIDOWS.forEach(w=>{w.g.visible=false;w.silent=false;w.rebozo.visible=false;w.g.position.set(w.hx,0,w.hz);w.v.x=w.hx;w.v.z=w.hz});
-fencePosts.forEach(p=>{p.post.visible=false;p.rail.visible=false;p.rail.position.y=0});respCandle.visible=false;churchPhase(false);zoneLights();ambTo(1)}
+fencePosts.forEach(p=>{p.post.visible=false;p.rail.visible=false;p.rail.position.y=0});respCandle.visible=false;churchPhase(false);zoneLights();ambTo(1);endReset()}
 function startCh3(){clearSay();S.zone='wake';S.ch='3a';setPal(PAL.wake);setAvatar(juan);place(Z3,9.4,Math.PI);S.ceil=4.3;S.breath=1;S.ros={ph:'pray',t:0,len:12,seen:false};VOICES.forEach(v=>{if(v.zone==='wake')v.active=true});S.flags.done=true;zoneLights();ambTo(0.12);chapterCard(3);S.after.push(()=>say([['',T('ros1')]]))}
 function updRosary(dt){const r=S.ros;if(!r)return;r.t+=dt;if(r.ph==='pray'&&r.t>r.len){r.ph='look';r.t=0;r.seen=false;campanilla()}else if(r.ph==='look'&&r.t>3.2){r.ph='pray';r.t=0;r.len=6+Math.random()*3}
 const look=r.ph==='look';if(look&&!S.lock&&S.ch==='3a')hint(T('still'),0.2);
@@ -241,29 +241,29 @@ function updWidows(dt){let n=0;WIDOWS.forEach(w=>{const g=w.g;if(w.silent){if(g.
 const dx=P.x-g.position.x,dz=P.z-g.position.z,d=Math.hypot(dx,dz);let mv=false;if(d<15&&d>1.5&&S.listening!==w.v&&S.mode==='play'){g.position.x+=dx/d*0.42*dt;g.position.z+=dz/d*0.42*dt;mv=true}g.rotation.y=Math.atan2(dx,dz);animWalk(w,S.t*3.5+w.ph,mv?0.28:0);if(d<2.3)n++;
 w.v.x=g.position.x;w.v.z=g.position.z;if(w.v.a&&w.v.a.pan&&(w.v.a.pan.positionX||w.v.a.pan.setPosition))setPos(w.v.a.pan,w.v.x,1.4,w.v.z)});const L=WIDOWS.filter(w=>w.g.visible&&!w.silent),M=2.8;for(let k=0;k<3;k++)for(let i=0;i<L.length;i++)for(let j=i+1;j<L.length;j++){const A1=L[i].g.position,B1=L[j].g.position;let dx=B1.x-A1.x,dz=B1.z-A1.z,d=Math.hypot(dx,dz);if(d<1e-4){dx=1;dz=0;d=1e-4}if(d<M){const la=S.listening===L[i].v,lb=S.listening===L[j].v,q=(M-d)/d,qa=la?0:lb?q:q/2,qb=lb?0:la?q:q/2;A1.x-=dx*qa;A1.z-=dz*qa;B1.x+=dx*qb;B1.z+=dz*qb}}L.forEach(w=>{w.v.x=w.g.position.x;w.v.z=w.g.position.z;if(w.v.a&&w.v.a.pan&&(w.v.a.pan.positionX||w.v.a.pan.setPosition))setPos(w.v.a.pan,w.v.x,1.4,w.v.z)});P.spMul=Math.max(0.4,1-n*0.2)}
 function startSilence(){S.ch='5d';if(A.ctx){const t=A.ctx.currentTime;A.pastAmb.gain.cancelScheduledValues(t);A.pastAmb.gain.setTargetAtTime(0,t,0.8)}ambTo(0);seq([[3.5,()=>{VOICES.find(v=>v.id==='madre2').active=true}]])}
-function neverFail(){S.zf.never=(S.zf.never||0)+1;say([['',T('cantSilence')]]);if(S.zf.never===1)seq([[4.5,()=>{S.lock=true;say([['',T('end5a'),()=>seq([[1.5,()=>endGame(endCard5())]])]])}]])}
+function neverFail(){S.zf.never=(S.zf.never||0)+1;say([['',T('cantSilence')]]);if(S.zf.never===1)seq([[4.5,()=>{S.lock=true;say([['',T('end5a'),()=>seq([[1.5,()=>fadeTo(startCh6)]])]])}]])}
 const BOOK=Object.keys(I18N.es.fr);
 function endCard5(){return T('endCard5')(BOOK.filter(k=>S.frags[k]).length,BOOK.length,EXIDS.filter(k=>S.exv[k]).length,S.ecos.length)}
 function listenHint(t){if(t.id==='pensar')return T('hintThink');if(t.id==='renteria')return T('hintPray');if(S.zone==='plaza')return T('hintSilence');return T('hintListen')}
 const eduDoor=new THREE.Group();eduDoor.position.set(4.95,0,-85);scene.add(eduDoor);box(0.08,2.35,2,plankMat,0,1.17,1,eduDoor);box(0.1,0.06,0.06,ironMat,-0.06,1.1,1.8,eduDoor);const eduDoorCol=[4.75,5.2,-85,-83];colliders.push(eduDoorCol);const eduDoorOpen=[999,999,-85.12,-84.88];colliders.push(eduDoorOpen);
-function npcList(){return [abundio.g,eduviges.g,pedroN.g,rentN.g,fulgor.g,susana.g,...burros,...MOURN.map(m=>m.g||m),...WIDOWS.map(w=>w.g),...ghostsC.map(m=>m.g||m)]}
+function npcList(){return [abundio.g,eduviges.g,pedroN.g,rentN.g,fulgor.g,susana.g,...burros,...MOURN.map(m=>m.g||m),...WIDOWS.map(w=>w.g),...ghostsC.map(m=>m.g||m),...endNPCs()]}
 function collideNPC(){for(const g of npcList()){if(!g||!g.visible||g===PL.g)continue;const r=burros.includes(g)?0.5:0.28,m=r+0.35;const dx=P.x-g.position.x,dz=P.z-g.position.z,d=Math.hypot(dx,dz);if(d<m&&d>1e-4){P.x=g.position.x+dx/d*m;P.z=g.position.z+dz/d*m}}}
 function zoneFrag(id){const F=S.frags;if(id==='eduviges')VOICES[2].active=true;
 if(['w1','w2','pedro'].includes(id)&&['w1','w2','pedro'].every(k=>F[k]))S.after.push(startCut3);
 if((id==='maria'||id==='ana')&&F.maria&&F.ana){VOICES.find(v=>v.id==='renteria').active=true}
 if(id==='renteria')S.after.push(hideCoins);if(id==='pensar')S.after.push(()=>fadeTo(startHill));if(id==='papalote')S.after.push(startFollow);if(id==='madre')S.after.push(startGrow);if(id==='toribio')S.after.push(startHanged);
-const w=WIDOWS.find(w=>w.id===id);if(w){w.silent=true;w.sinkT=0;w.rebozo.position.set(w.g.position.x,0.02,w.g.position.z);w.rebozo.visible=true;if(WIDOWS.every(w=>w.silent))S.after.push(startSilence)}}
+const w=WIDOWS.find(w=>w.id===id);if(w){w.silent=true;w.sinkT=0;w.rebozo.position.set(w.g.position.x,0.02,w.g.position.z);w.rebozo.visible=true;if(WIDOWS.every(w=>w.silent))S.after.push(startSilence)}endFrag(id)}
 function zoneObjective(){let b=null,bd=1e9;VOICES.forEach(v=>{if(v.active&&!v.done&&here(v)){const d=Math.hypot(P.x-v.x,P.z-v.z);if(d<bd){bd=d;b=v}}});if(b)return b;
-if(S.ch==='3c')return{x:ZC,z:-12};if(S.ch==='4b')return SUS;if(S.ch==='4follow')return{x:kiteG.position.x,z:kiteG.position.z};if(S.ch==='4c')return{x:Z4-4,z:2.2};if(S.ch==='5a')return{x:Z5,z:-3.4};if(S.ch==='5b'){const F=S.fence;if(!F||!F.on)return FSTART;const W=MOJ.map(m=>{const dx=m.x-Z5-7,dz=m.z-24.7,l=Math.hypot(dx,dz);return{x:m.x+dx/l*3,z:m.z+dz/l*3}});F.wp=F.wp||0;while(F.wp<W.length&&Math.hypot(P.x-W[F.wp].x,P.z-W[F.wp].z)<1.4)F.wp++;return F.wp<W.length?W[F.wp]:FSTART}return null}
+if(S.ch==='3c')return{x:ZC,z:-12};if(S.ch==='4b')return SUS;if(S.ch==='4follow')return{x:kiteG.position.x,z:kiteG.position.z};if(S.ch==='4c')return{x:Z4-4,z:2.2};if(S.ch==='5a')return{x:Z5,z:-3.4};if(S.ch==='5b'){const F=S.fence;if(!F||!F.on)return FSTART;const W=MOJ.map(m=>{const dx=m.x-Z5-7,dz=m.z-24.7,l=Math.hypot(dx,dz);return{x:m.x+dx/l*3,z:m.z+dz/l*3}});F.wp=F.wp||0;while(F.wp<W.length&&Math.hypot(P.x-W[F.wp].x,P.z-W[F.wp].z)<1.4)F.wp++;return F.wp<W.length?W[F.wp]:FSTART}return endObjective()}
 function zoneUpdate(dt){if(S.zone==='wake')updRosary(dt);
 if(S.ch==='3b'){const close=Math.max(0,Math.min(1,1-(P.z+10)/22));P.stoop=S.zf.coinsLeft?0.1+0.38*close:0.05;P.spMul=S.zf.coinsLeft?1-0.45*close:1}else P.stoop=0;
 if(S.ch==='4a'){const k=S.listening&&S.listening.id==='pensar'?S.listenT:0;ohMat.opacity=1-k*0.85;S.zf.abT+=dt;if(S.zf.abT>24&&!S.listening){S.zf.abT=0;say([[T('nAbuela'),T('ab1')]])}}
 if(S.ch==='4b'&&Math.hypot(P.x-SUS.x,P.z-SUS.z)<3.2){S.ch='4talk';S.lock=true;P.rot=Math.atan2(SUS.x-P.x,SUS.z-P.z);say([[T('nPedro'),T('pn2')],[T('nSusana'),T('su1'),startKite]])}
 if(S.ch==='4kite')updKite(dt);if(S.ch==='4follow')updFollow(dt);if(S.ch==='4grow')updGrow(dt);if(S.ch==='5b')updFence(dt);
-if(S.zone!=='plaza')P.spMul=S.ch==='3b'?P.spMul:1;zoneAudioUpd(dt)}
+if(S.zone!=='plaza')P.spMul=S.ch==='3b'?P.spMul:1;zoneAudioUpd(dt);endZoneUpdate(dt)}
 function zonePose(){if(PL===rentPL){PL.head.rotation.x+=P.stoop*0.9;PL.arms.forEach(a=>a.rotation.x+=(-0.35-a.rotation.x)*Math.min(1,P.stoop*1.5));rentCoin.visible=S.zf.coinsLeft>0}
 if(S.ch==='4kite'){const h=keys['KeyE'];PL.arms.forEach((a,i)=>{a.rotation.x=-2.3+(h?Math.sin(S.t*9+i)*0.12:0);a.rotation.z=(i?-1:1)*0.15});PL.elbows.forEach(e=>e.rotation.x=-0.35);PL.head.rotation.x=-0.45}
-if(PL===pedroPL&&S.listening){PL.arms[0].rotation.x=-1.4;PL.elbows[0].rotation.x=-0.3;PL.arms[0].rotation.z=0.1;PL.head.rotation.z=0}}
+if(PL===pedroPL&&S.listening){PL.arms[0].rotation.x=-1.4;PL.elbows[0].rotation.x=-0.3;PL.arms[0].rotation.z=0.1;PL.head.rotation.z=0}endPose()}
 function zoneNPC(dt){zFlames.forEach((f,i)=>{f.scale.y=0.8+0.4*Math.abs(Math.sin(S.t*9+i*1.7))});
 if(S.zone==='wake'){animWalk(pedroN,0,0);if(S.rentWalk){const g=rentN.g;g.position.z=Math.max(-5.55,g.position.z-dt*1.5);animWalk(rentN,S.t*5,0.4);if(g.position.z<=-5.55){S.rentWalk=false;g.rotation.y=-Math.PI/2;pedroN.g.rotation.y=Math.PI/2;animWalk(rentN,0,0);say([[T('nPedro'),T('r1')],[T('nPedro'),T('r2'),coinHand],[T('nRent'),T('r3'),()=>fadeTo(startRenteria)]])}}else if(rentN.g.visible)animWalk(rentN,0,0)}
 if(S.coinAnim){const q=S.coinAnim;q.t+=dt;const k=Math.min(1,q.t/1.2);coinG.position.set(Z3+0.25+0.45*k,1.0+Math.sin(k*Math.PI)*0.15,-5.85+0.25*k);if(k>=1)S.coinAnim=null}
@@ -272,7 +272,7 @@ if(S.zone==='child'&&susana.g.visible)animWalk(susana,0,0);if(S.zone==='media')a
 if(hangT.g.visible)hangT.g.rotation.y=Math.sin(S.t*0.6)*0.25;
 exSparks.forEach((s,i)=>s.visible=Math.sin(S.t*2.2+i*1.3)>0.75&&!S.exv[s.userData.id]);
 fencePosts.forEach(p=>{if(p.post.visible&&p.t<1){p.t+=dt*3;const k=Math.min(1,p.t);p.post.scale.y=Math.max(0.01,k);p.post.position.y=0.6*k;if(p.t>0.6)p.rail.visible=true}});
-if(S.fenceSink>0){S.fenceSink-=dt;fencePosts.forEach(p=>{if(p.post.visible){p.post.position.y-=dt*1.4;p.rail.position.y-=dt*1.4}});if(S.fenceSink<=0){S.fenceSink=0;fencePosts.forEach(p=>{p.post.visible=false;p.rail.visible=false;p.rail.position.y=0})}}}
+if(S.fenceSink>0){S.fenceSink-=dt;fencePosts.forEach(p=>{if(p.post.visible){p.post.position.y-=dt*1.4;p.rail.position.y-=dt*1.4}});if(S.fenceSink<=0){S.fenceSink=0;fencePosts.forEach(p=>{p.post.visible=false;p.rail.visible=false;p.rail.position.y=0})}}endNPC(dt)}
 const KONAMI=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','KeyB','KeyA'];let kIdx=0;
 addEventListener('keydown',e=>{if(e.repeat)return;kIdx=e.code===KONAMI[kIdx]?kIdx+1:(e.code===KONAMI[0]?1:0);if(kIdx===KONAMI.length){kIdx=0;S.konami=true;$('ver').textContent='v'+VERSION+' · UFO';tone(880,0.2,0.05);if(A.ctx)tone(1320,0.3,0.05,'sine',A.sfx,A.ctx.currentTime+0.15)}
 if(e.code==='KeyF'&&S.mode==='play'&&S.zone==='wake'&&Math.hypot(P.x-Z3,P.z+4)<4.5&&!respCandle.visible){respCandle.visible=true;hint(T('respects'),4)}

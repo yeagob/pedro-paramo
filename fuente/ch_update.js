@@ -34,9 +34,9 @@ else if(PL===juan&&S.zone!=='hang'){if(!inside)drain+=S.past||S.zone==='wake'?0.
 if(S.zone==='comala'){if(!S.past)heatSpots.forEach(s=>{if(Math.hypot(P.x-s[0],P.z-s[1])<2.2){drain+=0.05;heat=1.2}});
 if(Math.hypot(P.x-pozo.x,P.z-pozo.z)<2.6){S.breath=Math.min(1,S.breath+dt*1.5);drain=0;if(!S.touchedWater||S.check.x!==pozo.x){S.check={x:pozo.x,z:pozo.z+2};S.touchedWater=true;say([['',T('water')]])}hint(T('waterHint'))}}}
 S.breath=Math.max(0,S.breath-drain*dt/(1+0.7*S.ecos.length));
-if(S.zone==='comala'&&!S.past&&P.z<-56&&P.z>-60&&Math.abs(P.x)<4&&S.check.z>-56){S.check={x:0,z:-57};tell([['',T('checkTown')]]);hint(T('hintMove'),6)}heat=Math.max(heat,S.dizzy*1.3);postMat.uniforms.heat.value+=(heat-postMat.uniforms.heat.value)*Math.min(1,dt*2);
+if(S.zone==='comala'&&!S.past&&P.z<-56&&P.z>-60&&Math.abs(P.x)<4&&S.check.z>-56){S.check={x:0,z:-57};saveAt('comala');tell([['',T('checkTown')]]);hint(T('hintMove'),6)}heat=Math.max(heat,S.dizzy*1.3);postMat.uniforms.heat.value+=(heat-postMat.uniforms.heat.value)*Math.min(1,dt*2);
 S.histT+=dt;if(S.histT>0.1){S.histT=0;S.hist.push({x:P.x,z:P.z,r:P.rot});if(S.hist.length>600)S.hist.shift()}
-if(S.breath<=0&&PL===juan)fall();
+if(S.breath<=0&&PL===juan&&!S.noFall)fall();
 if(S.zone==='comala')story();else zoneUpdate(dt);
 animWalk(PL,P.walkT,P.amp);P.lean=(P.lean||0)+((P.moving?Math.max(-0.12,Math.min(0.12,-(P.turn||0)*0.6))*P.amp:0)-(P.lean||0))*Math.min(1,dt*5);
 const sc=P.sc||1;PL.g.position.set(P.x,P.y+PL.bob*sc,P.z);const pant=PL===juan?Math.max(0,(0.6-S.breath)/0.6):0;PL.g.rotation.set(P.amp*(P.run?0.2:0.06)+pant*(P.moving?0.08:0.14)+(P.stoop||0),P.rot,P.lean);
