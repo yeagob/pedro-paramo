@@ -7,7 +7,7 @@ def R(a,b,cnt=1):
     n=s.count(a)
     if n!=cnt: sys.exit('count %d for %r'%(n,a[:80]))
     s=s.replace(a,b)
-R("const VERSION='0.7.0';","const VERSION='0.9.0';")
+R("const VERSION='0.7.0';","const VERSION='1.0-beta';")
 R("const d=Math.hypot(P.x-v.x,P.z-v.z);if(d<3&&d<bd){bd=d;best=v}});","const d=Math.hypot(P.x-v.x,P.z-v.z);if(d<(v.range||3)&&d<bd){bd=d;best=v}});")
 R('<button id="start" data-i18n="start"></button>','<button id="cont" data-i18n="cont" hidden></button>\n<button id="start" data-i18n="start"></button>')
 R('<div id="tMoments" class="mcol mlist" hidden></div>','<div id="tMoments" class="mcol mlist" hidden></div>\n<button id="tCred" class="ghost" data-i18n="credits"></button>\n<div id="tCredits" class="small credits" hidden></div>\n<a id="repoL" class="small" href="https://github.com/yeagob/pedro-paramo" target="_blank" rel="noopener" data-i18n="repo"></a>')
