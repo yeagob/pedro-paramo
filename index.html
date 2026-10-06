@@ -89,7 +89,7 @@ input[type=range]{accent-color:var(--accent);flex:1;min-width:0;max-width:60%}
 </div></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
-const VERSION='0.8.4';
+const VERSION='0.8.5';
 const W=640,H=480;
 const $=id=>document.getElementById(id);
 const canvas=$('c');$('ver').textContent='v'+VERSION;
@@ -755,7 +755,7 @@ $('optSens').oninput=e=>{sens=e.target.value/100};
 $('start').onclick=()=>{$('title').classList.remove('on');try{initAudio()}catch(e){}S.mode='play';hint(T('hintMoveRoad'),8);
 try{canvas.requestPointerLock()}catch(e){}if(pending){const m=pending;pending=null;jumpTo(m)}};
 let pending=null;{const h=location.hash.match(/^#m-([a-z]+)$/);if(h&&T('mo')[h[1]])pending=h[1]}
-$('tMom').onclick=()=>{$('tMoments').hidden=!$('tMoments').hidden};$('mMom').onclick=()=>showPanel('mMoments');
+$('tMom').onclick=()=>{$('tMoments').hidden=!$('tMoments').hidden};$('mMom').onclick=()=>showPanel('mMoments');if(new URLSearchParams(location.search).get('admin')!=='true'){$('tMom').style.display='none';$('tMoments').style.display='none';$('mMom').style.display='none'}
 function pickMoment(id){if(S.mode==='title'){pending=id;$('start').onclick();return}const m=$('menu');m.classList.remove('on');if(A.ctx)A.ctx.resume();jumpTo(id)}
 function pastSetup(){Object.assign(S.flags,{reb:1,edu:1,gallop:true});VOICES.slice(0,3).forEach(v=>v.active=true);S.frags.caballo=true;VOICES[2].done=true;setWorld(true);S.check={x:10,z:-84};eduviges.g.position.set(13.2,0,-83.4);P.x=10;P.z=-84}
 function jumpTo(id){resetZone();S.fade=null;$('choice').classList.remove('on');$('end').classList.remove('on');cam.yaw=0;cam.pitch=0.5;stopMurmur();$('card').classList.remove('on');S.after=[];queue.length=0;subT=0;$('sub').innerHTML='';$('listen').textContent='';$('puzzle').classList.remove('on');const f=S.flags;
