@@ -1,6 +1,6 @@
 import sys,os
 SP=os.path.dirname(os.path.abspath(__file__))
-p=os.path.join(SP,'..','index.html')
+p=os.path.join(SP,'..','jugar.html')
 s=open(SP+'/index_v070.html').read()
 def R(a,b,cnt=1):
     global s
@@ -65,7 +65,7 @@ R("P.y=groundH(P.x,P.z);juan.g.position.set(P.x,P.y,P.z);cam.pos.set(P.x+Math.si
 R("eduviges.head.rotation.y=Math.sin(S.t*0.5)*0.3}","eduviges.head.rotation.y=Math.sin(S.t*0.5)*0.3;zoneNPC(dt)}")
 R('<title>Pedro Páramo</title>',open(SP+'/seo_head.html').read().strip())
 R('<body>\n','<body>\n<noscript><h1>Pedro Páramo</h1><p>Videojuego gratuito de navegador basado en la novela de Juan Rulfo: un survival horror de la primera PlayStation al estilo de Silent Hill, en doce capítulos y en español, catalán e inglés. Necesita JavaScript y WebGL.</p><p><a href="https://github.com/yeagob/pedro-paramo">Código en GitHub</a></p></noscript>\n')
-R("let LANG=((navigator.language||'es').slice(0,2));if(!I18N[LANG])LANG='es';","const QLANG=new URLSearchParams(location.search).get('lang');let LANG=((I18N[QLANG]&&QLANG)||navigator.language||'es').slice(0,2);if(!I18N[LANG])LANG='es';{const l=document.createElement('link');l.rel='canonical';l.href=location.origin+'/'+(I18N[QLANG]?'?lang='+QLANG:'');document.head.appendChild(l)}")
+R("let LANG=((navigator.language||'es').slice(0,2));if(!I18N[LANG])LANG='es';","const QLANG=new URLSearchParams(location.search).get('lang');let LANG=((I18N[QLANG]&&QLANG)||navigator.language||'es').slice(0,2);if(!I18N[LANG])LANG='es';{const l=document.createElement('link');l.rel='canonical';l.href=location.origin+location.pathname.replace(/\\.html$/,'')+(I18N[QLANG]?'?lang='+QLANG:'');document.head.appendChild(l)}")
 R("function applyLang(){document.documentElement.lang=LANG;","function applyLang(){document.documentElement.lang=LANG;document.title=T('seoTitle');document.querySelector('meta[name=description]').content=T('seoDesc');")
 a=s.index('function update(dt){');b=s.index('setWorld(false);\njuan.g.position.set')
 s=s[:a]+open(SP+'/ch_update.js').read()+open(SP+'/ch_main.js').read()+'\n'+open(SP+'/ch_end.js').read()+'\n'+s[b:]

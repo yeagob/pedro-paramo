@@ -5,7 +5,7 @@ const server=http.createServer((q,r)=>{const f=path.join(root,decodeURIComponent
 const b=await chromium.launch({args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});const pg=await b.newPage({viewport:{width:640,height:480}});
 const errs=[];pg.on('pageerror',e=>errs.push(e.message+' '+e.stack));
 await pg.route('**/three.min.js',r=>r.fulfill({path:process.env.THREE_LOCAL,contentType:'application/javascript'}));
-await pg.goto(`http://127.0.0.1:${server.address().port}/index.html#m-velorio`);await pg.waitForTimeout(500);await pg.click('#start');await pg.waitForTimeout(500);
+await pg.goto(`http://127.0.0.1:${server.address().port}/jugar.html#m-velorio`);await pg.waitForTimeout(500);await pg.click('#start');await pg.waitForTimeout(500);
 await pg.evaluate(()=>{window.adv=s=>{for(let i=0;i<s*20;i++){if(S.mode==='card'){S.cardT=1;S.cardReady=true;closeCard()}update(0.05)}};window.st=()=>({zone:S.zone,ch:S.ch,mode:S.mode,lock:S.lock,sub:document.getElementById('sub').innerText})});
 const step=async(name,fn)=>{const r=await pg.evaluate(fn);console.log(name.padEnd(14),JSON.stringify(r));if(errs.length){console.log('ERR',errs.join('\n'));errs.length=0}};
 await step('velorio',()=>{adv(1);['w1','w2','pedro'].forEach(k=>completeFrag(k));adv(40);return st()});

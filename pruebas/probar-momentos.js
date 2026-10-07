@@ -11,7 +11,7 @@ const moments=(process.env.MOMENTS||'camino,comala,eduviges,caballo,pasado,puzle
 const langs=(process.env.LANGS||'es').split(',');
 (async()=>{
 fs.mkdirSync(out,{recursive:true});
-await new Promise(r=>server.listen(0,'127.0.0.1',r));const html=`http://127.0.0.1:${server.address().port}/index.html`;
+await new Promise(r=>server.listen(0,'127.0.0.1',r));const html=`http://127.0.0.1:${server.address().port}/jugar.html`;
 const b=await chromium.launch({args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});
 let fails=0;
 for(const lang of langs)for(const m of moments){

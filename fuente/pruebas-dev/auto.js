@@ -5,7 +5,7 @@ const server=http.createServer((q,r)=>{const f=path.join(root,decodeURIComponent
 const b=await chromium.launch({args:['--use-gl=angle','--use-angle=swiftshader','--enable-unsafe-swiftshader']});const pg=await b.newPage({viewport:{width:640,height:480}});
 const errs=[];pg.on('pageerror',e=>errs.push(e.message));
 await pg.route('**/three.min.js',r=>r.fulfill({path:process.env.THREE_LOCAL,contentType:'application/javascript'}));
-await pg.goto(`http://127.0.0.1:${server.address().port}/index.html${process.env.HASH||''}`);await pg.waitForTimeout(500);await pg.click('#start');await pg.waitForTimeout(800);
+await pg.goto(`http://127.0.0.1:${server.address().port}/jugar.html${process.env.HASH||''}`);await pg.waitForTimeout(500);await pg.click('#start');await pg.waitForTimeout(800);
 const MAX=+(process.env.MAX||1500);
 for(let chunk=0;chunk<MAX/50;chunk++){
 const r=await pg.evaluate(()=>{const W=window;if(!W.AP){W.AP={log:[],last:{},t:0,stuck:0,lastProg:'',lastProgT:0,holdT:0}}const A=W.AP;
