@@ -1,0 +1,584 @@
+{
+ "es": {
+  "fr": {
+   "rebozo": {
+    "who": "Una mujer",
+    "title": "La mujer del rebozo",
+    "text": "Aquí ya no queda nadie. Todos se fueron... o se murieron, que viene a ser lo mismo. Las casas se quedaron oyendo."
+   },
+   "eduviges": {
+    "who": "Eduviges Dyada",
+    "title": "La noche de bodas",
+    "text": "Dolores me pidió que fuera yo en su lugar la noche de su boda. Fui. Pedro Páramo nunca supo con quién había dormido."
+   },
+   "caballo": {
+    "who": "Eduviges Dyada",
+    "title": "El caballo",
+    "text": "¿Lo oyes? Es el caballo de Miguel Páramo. Corre de ida y vuelta por el camino de la Media Luna, buscando a su dueño."
+   },
+   "p1": {
+    "who": "Una voz",
+    "title": "Miguel ensilla",
+    "text": "Esa noche Miguel Páramo ensilló su caballo. Iba a Contla, a ver a una muchacha."
+   },
+   "p2": {
+    "who": "Una voz",
+    "title": "La cerca",
+    "text": "El caballo se espantó frente a la cerca de piedra que su padre había mandado levantar."
+   },
+   "p3": {
+    "who": "Una voz",
+    "title": "La caída",
+    "text": "Miguel cayó de cabeza. El caballo siguió corriendo, solo, de ida y vuelta por el camino."
+   },
+   "p4": {
+    "who": "Eduviges Dyada",
+    "title": "La ventana",
+    "text": "Ya tarde, Miguel tocó mi ventana. Dijo que no encontraba el pueblo, que todo era neblina. Le dije que estaba muerto."
+   },
+   "w1": {
+    "who": "Una plañidera",
+    "title": "El rosario",
+    "text": "Dicen que mató al hermano del padre Rentería. Y que a Ana, la sobrina, la deshonró. Y aquí estamos todas, rezándole."
+   },
+   "w2": {
+    "who": "Otra plañidera",
+    "title": "Sin llorar",
+    "text": "Míralo. No llora. Pedro Páramo no ha llorado nunca, ni por su propio hijo."
+   },
+   "pedro": {
+    "who": "Pedro Páramo",
+    "title": "El ataúd",
+    "text": "Estoy comenzando a pagar. Más vale empezar temprano, para terminar pronto."
+   },
+   "maria": {
+    "who": "María Dyada",
+    "title": "Por Eduviges",
+    "text": "Mi hermana Eduviges se mató, padre, pero era buena. ¿No hay modo de salvarla? Yo no tengo con qué pagar las misas."
+   },
+   "ana": {
+    "who": "Ana",
+    "title": "La sobrina",
+    "text": "Fue Miguel Páramo, tío. Entró por la ventana. Lo conocí aunque estaba oscuro."
+   },
+   "renteria": {
+    "who": "Padre Rentería",
+    "title": "El precio",
+    "text": "Son tuyas, Señor. Él puede comprar la salvación. Tú sabrás si ése es el precio. Una por el que murió, una por la que él lastimó, una por el que pagó."
+   },
+   "pensar": {
+    "who": "Pedro Páramo",
+    "title": "El excusado",
+    "text": "Pensaba en ti, Susana. En las lomas verdes, cuando volábamos papalotes en la época del aire."
+   },
+   "papalote": {
+    "who": "Pedro Páramo",
+    "title": "El papalote",
+    "text": "El hilo corría entre nuestros dedos hasta que se reventaba, como si lo hubiera trozado el aleteo de algún pájaro."
+   },
+   "madre": {
+    "who": "La madre de Pedro",
+    "title": "La puerta",
+    "text": "No abras, Pedro. Han matado a tu padre."
+   },
+   "toribio": {
+    "who": "Toribio Aldrete",
+    "title": "La cerca",
+    "text": "¡Esa cerca no estaba ahí, Pedro Páramo! Esas tierras son mías. Voy a ir a la ley."
+   },
+   "v1": {
+    "who": "Una viuda",
+    "title": "La barranca",
+    "text": "A mi marido lo hallaron en la barranca, con las manos amarradas. Nadie vio nada."
+   },
+   "v2": {
+    "who": "Una viuda",
+    "title": "Los hijos",
+    "text": "¿Y ahora quién les da de comer a mis hijos? Pedro Páramo se quedó hasta con las milpas."
+   },
+   "v3": {
+    "who": "Una viuda",
+    "title": "El camino",
+    "text": "Salió al camino de Contla y no regresó. Dicen que lo estaban esperando."
+   },
+   "v4": {
+    "who": "Una viuda",
+    "title": "La maldición",
+    "text": "Que Dios te lo cobre, Pedro Páramo. Que te lo cobre con lo que más quieras."
+   },
+   "v5": {
+    "who": "Una viuda",
+    "title": "Sin hombres",
+    "text": "Ya no quedan hombres en Comala. Nada más nosotras, y el silencio."
+   },
+   "d1": {
+    "who": "Damiana Cisneros",
+    "title": "De niño",
+    "text": "Yo te cuidé cuando eras chiquito, en la Media Luna. Tu madre te dejaba en mis brazos y se iba a llorar al corral."
+   },
+   "d2": {
+    "who": "Damiana Cisneros",
+    "title": "Las puertas",
+    "text": "Pedro Páramo tocaba de noche la puerta de las criadas. Una por una. Yo nunca le abrí, y por eso todavía me acuerdo de su voz."
+   },
+   "h1": {
+    "who": "La hermana",
+    "title": "El obispo",
+    "text": "Pasó el obispo por aquí. Le pedimos que nos casara y no quiso. Dijo que éramos hermanos, que lo nuestro era pecado. Desde entonces nadie nos mira."
+   },
+   "h2": {
+    "who": "Donis",
+    "title": "El becerro",
+    "text": "Voy a buscar un becerro que se me fue. Tú quédate con ella. Si no vuelvo, no me esperes."
+   },
+   "do1": {
+    "who": "Dorotea",
+    "title": "El hijo",
+    "text": "Me pasé la vida buscando un hijo que nunca tuve. Lo cargaba en el rebozo, Juan, y no había nada en el rebozo."
+   },
+   "sz1": {
+    "who": "Susana San Juan",
+    "title": "Bajo tierra",
+    "text": "Estoy acostada en la misma cama donde murió mi madre. Afuera llueve. Florencio... ¿dónde estás, Florencio?"
+   },
+   "s0": {
+    "who": "Susana San Juan",
+    "title": "La calavera",
+    "text": "No era oro, papá. Era una calavera. Se me deshizo en las manos, como si estuviera hecha de cal."
+   },
+   "s1": {
+    "who": "Susana San Juan",
+    "title": "El mar",
+    "text": "El mar moja mis tobillos, luego mis rodillas, mis muslos. Rodea mi cintura con su brazo suave. Me baño desnuda en el mar."
+   },
+   "s2": {
+    "who": "Susana San Juan",
+    "title": "Florencio",
+    "text": "Florencio era mi marido. No me importa lo que digan: era él quien me abrazaba. Tú no, Pedro Páramo. Tú nunca."
+   },
+   "pf": {
+    "who": "Pedro Páramo",
+    "title": "El camino",
+    "text": "Había una luna grande en medio del mundo. Hace mucho que te fuiste, Susana. La luz era igual que ahora."
+   }
+  },
+  "mo": {
+   "camino": "1. El camino con Abundio",
+   "comala": "2. Llegada a Comala",
+   "eduviges": "3. La casa de Eduviges",
+   "caballo": "4. Las voces de la casa",
+   "pasado": "5. La noche de Miguel Páramo",
+   "puzle": "6. El puzle de aquella noche",
+   "ecos": "7. Cuatro ecos: al borde del final alterno",
+   "final": "8. El final del capítulo 2",
+   "velorio": "9. Capítulo 3: el velorio",
+   "renteria": "10. La iglesia de Rentería",
+   "retablo": "11. El retablo en el presente",
+   "excusado": "12. Capítulo 4: el excusado",
+   "papalote": "13. Los papalotes",
+   "puerta": "14. La puerta cerrada",
+   "fulgor": "15. Capítulo 5: las deudas",
+   "cerca": "16. La cerca de Toribio",
+   "viudas": "17. Las viudas",
+   "damiana": "18. Capítulo 6: Damiana",
+   "donis": "19. Capítulo 7: Donis y su hermana",
+   "murmullos": "20. Los murmullos",
+   "tumba": "21. Capítulo 8: la tumba",
+   "mina": "22. Capítulo 9: la mina",
+   "mar": "23. El mar",
+   "campanas": "24. Las campanas",
+   "revolucion": "25. Capítulo 10: la Revolución",
+   "hambre": "26. Capítulo 11: el hambre",
+   "silla": "27. Capítulo 12: la silla",
+   "abundio": "28. El cruce"
+  }
+ },
+ "ca": {
+  "fr": {
+   "rebozo": {
+    "who": "Una dona",
+    "title": "La dona del rebozo",
+    "text": "Aquí ja no hi queda ningú. Tots se'n van anar... o es van morir, que ve a ser el mateix. Les cases es van quedar escoltant."
+   },
+   "eduviges": {
+    "who": "Eduviges Dyada",
+    "title": "La nit de noces",
+    "text": "La Dolores em va demanar que hi anés jo en el seu lloc la nit de les noces. Hi vaig anar. Pedro Páramo no va saber mai amb qui havia dormit."
+   },
+   "caballo": {
+    "who": "Eduviges Dyada",
+    "title": "El cavall",
+    "text": "El sents? És el cavall de Miguel Páramo. Corre amunt i avall pel camí de la Media Luna, buscant el seu amo."
+   },
+   "p1": {
+    "who": "Una veu",
+    "title": "Miguel ensella",
+    "text": "Aquella nit Miguel Páramo va ensellar el cavall. Anava a Contla, a veure una noia."
+   },
+   "p2": {
+    "who": "Una veu",
+    "title": "La tanca",
+    "text": "El cavall es va espantar davant la tanca de pedra que el seu pare havia fet aixecar."
+   },
+   "p3": {
+    "who": "Una veu",
+    "title": "La caiguda",
+    "text": "En Miguel va caure de cap. El cavall va continuar corrent, sol, amunt i avall pel camí."
+   },
+   "p4": {
+    "who": "Eduviges Dyada",
+    "title": "La finestra",
+    "text": "Ja tard, en Miguel va trucar a la meva finestra. Va dir que no trobava el poble, que tot era boira. Li vaig dir que era mort."
+   },
+   "w1": {
+    "who": "Una ploranera",
+    "title": "El rosari",
+    "text": "Diuen que va matar el germà del pare Rentería. I que a l'Ana, la neboda, la va deshonrar. I aquí som totes, resant per ell."
+   },
+   "w2": {
+    "who": "Una altra ploranera",
+    "title": "Sense plorar",
+    "text": "Mira'l. No plora. Pedro Páramo no ha plorat mai, ni pel seu propi fill."
+   },
+   "pedro": {
+    "who": "Pedro Páramo",
+    "title": "El taüt",
+    "text": "Començo a pagar. Val més començar d'hora, per acabar aviat."
+   },
+   "maria": {
+    "who": "María Dyada",
+    "title": "Per Eduviges",
+    "text": "La meva germana Eduviges es va matar, pare, però era bona. No hi ha manera de salvar-la? Jo no tinc amb què pagar les misses."
+   },
+   "ana": {
+    "who": "Ana",
+    "title": "La neboda",
+    "text": "Va ser Miguel Páramo, oncle. Va entrar per la finestra. El vaig conèixer tot i que era fosc."
+   },
+   "renteria": {
+    "who": "Pare Rentería",
+    "title": "El preu",
+    "text": "Són teves, Senyor. Ell pot comprar la salvació. Tu sabràs si aquest és el preu. Una pel qui va morir, una per la qui ell va fer mal, una pel qui va pagar."
+   },
+   "pensar": {
+    "who": "Pedro Páramo",
+    "title": "La comuna",
+    "text": "Pensava en tu, Susana. En els turons verds, quan fèiem volar estels a l'època del vent."
+   },
+   "papalote": {
+    "who": "Pedro Páramo",
+    "title": "L'estel",
+    "text": "El fil corria entre els nostres dits fins que es trencava, com si l'hagués tallat el batec d'ales d'algun ocell."
+   },
+   "madre": {
+    "who": "La mare d'en Pedro",
+    "title": "La porta",
+    "text": "No obris, Pedro. Han matat el teu pare."
+   },
+   "toribio": {
+    "who": "Toribio Aldrete",
+    "title": "La tanca",
+    "text": "Aquesta tanca no hi era, Pedro Páramo! Aquestes terres són meves. Aniré a la llei."
+   },
+   "v1": {
+    "who": "Una vídua",
+    "title": "El barranc",
+    "text": "El meu marit el van trobar al barranc, amb les mans lligades. Ningú no va veure res."
+   },
+   "v2": {
+    "who": "Una vídua",
+    "title": "Els fills",
+    "text": "I ara qui donarà de menjar als meus fills? Pedro Páramo s'ha quedat fins i tot les milpes."
+   },
+   "v3": {
+    "who": "Una vídua",
+    "title": "El camí",
+    "text": "Va sortir al camí de Contla i no va tornar. Diuen que l'esperaven."
+   },
+   "v4": {
+    "who": "Una vídua",
+    "title": "La maledicció",
+    "text": "Que Déu t'ho faci pagar, Pedro Páramo. Que t'ho faci pagar amb el que més estimis."
+   },
+   "v5": {
+    "who": "Una vídua",
+    "title": "Sense homes",
+    "text": "Ja no queden homes a Comala. Només nosaltres, i el silenci."
+   },
+   "d1": {
+    "who": "Damiana Cisneros",
+    "title": "De petit",
+    "text": "Jo et vaig cuidar quan eres petitó, a la Media Luna. La teva mare et deixava als meus braços i se n'anava a plorar al corral."
+   },
+   "d2": {
+    "who": "Damiana Cisneros",
+    "title": "Les portes",
+    "text": "Pedro Páramo trucava de nit a la porta de les criades. Una per una. Jo no li vaig obrir mai, i per això encara recordo la seva veu."
+   },
+   "h1": {
+    "who": "La germana",
+    "title": "El bisbe",
+    "text": "Va passar el bisbe per aquí. Li vam demanar que ens casés i no va voler. Va dir que érem germans, que això nostre era pecat. Des d'aleshores ningú no ens mira."
+   },
+   "h2": {
+    "who": "Donis",
+    "title": "El vedell",
+    "text": "Vaig a buscar un vedell que se m'ha escapat. Tu queda't amb ella. Si no torno, no m'esperis."
+   },
+   "do1": {
+    "who": "Dorotea",
+    "title": "El fill",
+    "text": "Em vaig passar la vida buscant un fill que mai no vaig tenir. El duia al rebozo, Juan, i no hi havia res al rebozo."
+   },
+   "sz1": {
+    "who": "Susana San Juan",
+    "title": "Sota terra",
+    "text": "Estic estirada al mateix llit on va morir la meva mare. A fora plou. Florencio... on ets, Florencio?"
+   },
+   "s0": {
+    "who": "Susana San Juan",
+    "title": "La calavera",
+    "text": "No era or, pare. Era una calavera. Se'm va desfer a les mans, com si fos feta de calç."
+   },
+   "s1": {
+    "who": "Susana San Juan",
+    "title": "El mar",
+    "text": "El mar em mulla els turmells, després els genolls, les cuixes. M'envolta la cintura amb el seu braç suau. Em banyo nua al mar."
+   },
+   "s2": {
+    "who": "Susana San Juan",
+    "title": "Florencio",
+    "text": "En Florencio era el meu marit. No m'importa el que diguin: era ell qui m'abraçava. Tu no, Pedro Páramo. Tu mai."
+   },
+   "pf": {
+    "who": "Pedro Páramo",
+    "title": "El camí",
+    "text": "Hi havia una lluna grossa al mig del món. Fa molt que te'n vas anar, Susana. La llum era igual que ara."
+   }
+  },
+  "mo": {
+   "camino": "1. El camí amb Abundio",
+   "comala": "2. Arribada a Comala",
+   "eduviges": "3. La casa d'Eduviges",
+   "caballo": "4. Les veus de la casa",
+   "pasado": "5. La nit de Miguel Páramo",
+   "puzle": "6. El trencaclosques d'aquella nit",
+   "ecos": "7. Quatre ecos: a punt del final alternatiu",
+   "final": "8. El final del capítol 2",
+   "velorio": "9. Capítol 3: la vetlla",
+   "renteria": "10. L'església d'en Rentería",
+   "retablo": "11. El retaule en el present",
+   "excusado": "12. Capítol 4: la comuna",
+   "papalote": "13. Els estels",
+   "puerta": "14. La porta tancada",
+   "fulgor": "15. Capítol 5: els deutes",
+   "cerca": "16. La tanca d'en Toribio",
+   "viudas": "17. Les vídues",
+   "damiana": "18. Capítol 6: Damiana",
+   "donis": "19. Capítol 7: Donis i la germana",
+   "murmullos": "20. Els murmuris",
+   "tumba": "21. Capítol 8: la tomba",
+   "mina": "22. Capítol 9: la mina",
+   "mar": "23. El mar",
+   "campanas": "24. Les campanes",
+   "revolucion": "25. Capítol 10: la Revolució",
+   "hambre": "26. Capítol 11: la gana",
+   "silla": "27. Capítol 12: la cadira",
+   "abundio": "28. La cruïlla"
+  }
+ },
+ "en": {
+  "fr": {
+   "rebozo": {
+    "who": "A woman",
+    "title": "The woman in the rebozo",
+    "text": "Nobody is left here. They all went away... or died, which comes to the same thing. The houses stayed behind, listening."
+   },
+   "eduviges": {
+    "who": "Eduviges Dyada",
+    "title": "The wedding night",
+    "text": "Dolores asked me to go in her place on her wedding night. I went. Pedro Páramo never knew who he had slept with."
+   },
+   "caballo": {
+    "who": "Eduviges Dyada",
+    "title": "The horse",
+    "text": "Do you hear it? It's Miguel Páramo's horse. It runs back and forth along the road to the Media Luna, looking for its master."
+   },
+   "p1": {
+    "who": "A voice",
+    "title": "Miguel saddles up",
+    "text": "That night Miguel Páramo saddled his horse. He was going to Contla, to see a girl."
+   },
+   "p2": {
+    "who": "A voice",
+    "title": "The fence",
+    "text": "The horse shied at the stone fence his father had ordered built."
+   },
+   "p3": {
+    "who": "A voice",
+    "title": "The fall",
+    "text": "Miguel fell headfirst. The horse kept running, alone, back and forth along the road."
+   },
+   "p4": {
+    "who": "Eduviges Dyada",
+    "title": "The window",
+    "text": "Late that night, Miguel knocked on my window. He said he couldn't find the town, that everything was fog. I told him he was dead."
+   },
+   "w1": {
+    "who": "A mourner",
+    "title": "The rosary",
+    "text": "They say he killed Father Rentería's brother. And that he dishonored Ana, the niece. And here we all are, praying for him."
+   },
+   "w2": {
+    "who": "Another mourner",
+    "title": "No tears",
+    "text": "Look at him. He doesn't cry. Pedro Páramo has never cried, not even for his own son."
+   },
+   "pedro": {
+    "who": "Pedro Páramo",
+    "title": "The coffin",
+    "text": "I am beginning to pay. Better to start early, so as to finish soon."
+   },
+   "maria": {
+    "who": "María Dyada",
+    "title": "For Eduviges",
+    "text": "My sister Eduviges killed herself, Father, but she was good. Is there no way to save her? I have nothing to pay for the masses."
+   },
+   "ana": {
+    "who": "Ana",
+    "title": "The niece",
+    "text": "It was Miguel Páramo, Uncle. He came in through the window. I knew him even though it was dark."
+   },
+   "renteria": {
+    "who": "Father Rentería",
+    "title": "The price",
+    "text": "They are yours, Lord. He can buy salvation. You will know if that is the price. One for the one who died, one for the one he hurt, one for the one who paid."
+   },
+   "pensar": {
+    "who": "Pedro Páramo",
+    "title": "The outhouse",
+    "text": "I was thinking of you, Susana. Of the green hills, when we flew kites in the windy season."
+   },
+   "papalote": {
+    "who": "Pedro Páramo",
+    "title": "The kite",
+    "text": "The string ran through our fingers until it snapped, as if the beat of some bird's wing had cut it."
+   },
+   "madre": {
+    "who": "Pedro's mother",
+    "title": "The door",
+    "text": "Don't open it, Pedro. They have killed your father."
+   },
+   "toribio": {
+    "who": "Toribio Aldrete",
+    "title": "The fence",
+    "text": "That fence wasn't there, Pedro Páramo! That land is mine. I'm going to the law."
+   },
+   "v1": {
+    "who": "A widow",
+    "title": "The ravine",
+    "text": "They found my husband in the ravine, with his hands tied. Nobody saw anything."
+   },
+   "v2": {
+    "who": "A widow",
+    "title": "The children",
+    "text": "And now who will feed my children? Pedro Páramo took even the cornfields."
+   },
+   "v3": {
+    "who": "A widow",
+    "title": "The road",
+    "text": "He went out on the Contla road and never came back. They say someone was waiting for him."
+   },
+   "v4": {
+    "who": "A widow",
+    "title": "The curse",
+    "text": "May God make you pay, Pedro Páramo. May He make you pay with what you love most."
+   },
+   "v5": {
+    "who": "A widow",
+    "title": "No men",
+    "text": "There are no men left in Comala. Only us, and the silence."
+   },
+   "d1": {
+    "who": "Damiana Cisneros",
+    "title": "As a baby",
+    "text": "I looked after you when you were tiny, at the Media Luna. Your mother would leave you in my arms and go cry in the corral."
+   },
+   "d2": {
+    "who": "Damiana Cisneros",
+    "title": "The doors",
+    "text": "Pedro Páramo used to knock at the maids' doors at night. One by one. I never opened to him, and that's why I still remember his voice."
+   },
+   "h1": {
+    "who": "The sister",
+    "title": "The bishop",
+    "text": "The bishop came through here. We asked him to marry us and he refused. He said we were brother and sister, that what we had was a sin. Since then nobody looks at us."
+   },
+   "h2": {
+    "who": "Donis",
+    "title": "The calf",
+    "text": "I'm going to look for a calf that got away. You stay with her. If I don't come back, don't wait for me."
+   },
+   "do1": {
+    "who": "Dorotea",
+    "title": "The son",
+    "text": "I spent my life looking for a son I never had. I carried him in my rebozo, Juan, and there was nothing in the rebozo."
+   },
+   "sz1": {
+    "who": "Susana San Juan",
+    "title": "Underground",
+    "text": "I'm lying in the same bed where my mother died. Outside it's raining. Florencio... where are you, Florencio?"
+   },
+   "s0": {
+    "who": "Susana San Juan",
+    "title": "The skull",
+    "text": "It wasn't gold, papa. It was a skull. It crumbled in my hands, as if it were made of lime."
+   },
+   "s1": {
+    "who": "Susana San Juan",
+    "title": "The sea",
+    "text": "The sea wets my ankles, then my knees, my thighs. It puts its soft arm around my waist. I bathe naked in the sea."
+   },
+   "s2": {
+    "who": "Susana San Juan",
+    "title": "Florencio",
+    "text": "Florencio was my husband. I don't care what they say: he was the one who held me. Not you, Pedro Páramo. Never you."
+   },
+   "pf": {
+    "who": "Pedro Páramo",
+    "title": "The road",
+    "text": "There was a big moon in the middle of the world. You left a long time ago, Susana. The light was just like it is now."
+   }
+  },
+  "mo": {
+   "camino": "1. The road with Abundio",
+   "comala": "2. Arriving in Comala",
+   "eduviges": "3. Eduviges's house",
+   "caballo": "4. The voices in the house",
+   "pasado": "5. The night of Miguel Páramo",
+   "puzle": "6. The puzzle of that night",
+   "ecos": "7. Four echoes: on the edge of the alternate ending",
+   "final": "8. The end of chapter 2",
+   "velorio": "9. Chapter 3: the wake",
+   "renteria": "10. Rentería's church",
+   "retablo": "11. The altarpiece in the present",
+   "excusado": "12. Chapter 4: the outhouse",
+   "papalote": "13. The kites",
+   "puerta": "14. The locked door",
+   "fulgor": "15. Chapter 5: the debts",
+   "cerca": "16. Toribio's fence",
+   "viudas": "17. The widows",
+   "damiana": "18. Chapter 6: Damiana",
+   "donis": "19. Chapter 7: Donis and his sister",
+   "murmullos": "20. The murmurs",
+   "tumba": "21. Chapter 8: the grave",
+   "mina": "22. Chapter 9: the mine",
+   "mar": "23. The sea",
+   "campanas": "24. The bells",
+   "revolucion": "25. Chapter 10: the Revolution",
+   "hambre": "26. Chapter 11: hunger",
+   "silla": "27. Chapter 12: the chair",
+   "abundio": "28. The crossroads"
+  }
+ }
+}

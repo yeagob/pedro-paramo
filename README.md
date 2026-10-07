@@ -4,13 +4,13 @@
 
 Videojuego basado en **Pedro Páramo**, la novela de Juan Rulfo (1955), contada como un survival horror de la primera PlayStation al estilo de *Silent Hill* (1999): polígonos mínimos, niebla, voces que murmuran y un pueblo donde todos están muertos.
 
-**Jugar en el navegador:** https://pedro-paramo.vercel.app
+**Web:** https://pedro-paramo.vercel.app · **Jugar en el navegador:** https://pedro-paramo.vercel.app/jugar
 
 Disponible en **español, catalán e inglés**, con voces generadas en local. Usa auriculares.
 
-**English:** a free browser game based on *Pedro Páramo*, Juan Rulfo's 1955 novel, told as a first-PlayStation survival horror in the style of *Silent Hill*: low poly, fog and whispering voices in a town where everyone is dead. Twelve chapters, fully voiced in Spanish, Catalan and English. [Play in English](https://pedro-paramo.vercel.app/?lang=en).
+**English:** a free browser game based on *Pedro Páramo*, Juan Rulfo's 1955 novel, told as a first-PlayStation survival horror in the style of *Silent Hill*: low poly, fog and whispering voices in a town where everyone is dead. Twelve chapters, fully voiced in Spanish, Catalan and English. [Play in English](https://pedro-paramo.vercel.app/jugar?lang=en) · [website](https://pedro-paramo.vercel.app/en/).
 
-**Català:** un videojoc gratuït de navegador basat en *Pedro Páramo*, la novel·la de Juan Rulfo, explicat com un survival horror de la primera PlayStation a l'estil de *Silent Hill*. Dotze capítols amb veus en català, castellà i anglès. [Juga en català](https://pedro-paramo.vercel.app/?lang=ca).
+**Català:** un videojoc gratuït de navegador basat en *Pedro Páramo*, la novel·la de Juan Rulfo, explicat com un survival horror de la primera PlayStation a l'estil de *Silent Hill*. Dotze capítols amb veus en català, castellà i anglès. [Juga en català](https://pedro-paramo.vercel.app/jugar?lang=ca) · [web](https://pedro-paramo.vercel.app/ca/).
 
 ![Juan Preciado llega a Comala](docs/capturas/comala.png)
 
@@ -65,29 +65,39 @@ Las voces se cargan con `fetch`, así que el juego necesita un servidor, no bast
 npx serve .
 ```
 
-y abre la dirección que indique.
+y abre la dirección que indique: la portada en `/` y el juego en `/jugar`.
 
 ## Cómo está hecho
 
-- Un solo `index.html` con [three.js r128](https://threejs.org/): render a 640×480, vértices que tiemblan como en PS1, dithering de 15 bits, niebla y ondas de calor en un shader de postproceso.
+- Un solo `jugar.html` con [three.js r128](https://threejs.org/): render a 640×480, vértices que tiemblan como en PS1, dithering de 15 bits, niebla y ondas de calor en un shader de postproceso.
 - Personajes y animales modelados por código con tornos y cajas; texturas pintadas en canvas.
 - Ambiente, pasos, viento y murmullos sintetizados con Web Audio; las voces de los fragmentos suenan en 3D.
 - Voces: castellano con [Kokoro](https://github.com/thewh1teagle/kokoro-onnx); catalán e inglés con [Piper](https://github.com/rhasspy/piper). Todo generado en local.
 
 ```
-index.html          el juego
+index.html          la web (portada, novela, personajes, Rulfo), también ca/ y en/
+jugar.html          el juego
+web/                estilos, script e imágenes de la web
 audio/es|ca|en/     voces de cada idioma
-fuente/             piezas con las que se genera index.html (ver abajo)
+fuente/             piezas con las que se generan el juego y la web (ver abajo)
 pruebas/            prueba automática de momentos
 docs/               capturas y notas de diseño
 ```
 
 ### Editar el juego
 
-`index.html` se genera a partir de `fuente/`: la base de los capítulos 1 y 2 (`index_v070.html`), los capítulos 3 a 5 y las correcciones (`ch_main.js`, `ch_update.js`, `ch_i18n.js`) y los capítulos 6 a 12, el guardado y los créditos (`ch_end.js`, `ch_i18n2.js`). Edita esas piezas y regenera:
+`jugar.html` se genera a partir de `fuente/`: la base de los capítulos 1 y 2 (`index_v070.html`), los capítulos 3 a 5 y las correcciones (`ch_main.js`, `ch_update.js`, `ch_i18n.js`) y los capítulos 6 a 12, el guardado y los créditos (`ch_end.js`, `ch_i18n2.js`). Edita esas piezas y regenera:
 
 ```bash
 python3 fuente/patch8.py
+```
+
+### Editar la web
+
+La portada en los tres idiomas (`index.html`, `ca/index.html`, `en/index.html`) y `sitemap.xml` se generan desde `fuente/web.py` con los textos de `fuente/web_es.py`, `web_ca.py` y `web_en.py`:
+
+```bash
+python3 fuente/web.py
 ```
 
 ### Pruebas

@@ -3,3 +3,4 @@ node_modules/
 pruebas/capturas/
 *.wav
 .vercel
+__pycache__/
