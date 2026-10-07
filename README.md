@@ -8,6 +8,10 @@ Videojuego basado en **Pedro Páramo**, la novela de Juan Rulfo (1955), contada 
 
 Disponible en **español, catalán e inglés**, con voces generadas en local. Usa auriculares.
 
+**English:** a free browser game based on *Pedro Páramo*, Juan Rulfo's 1955 novel, told as a first-PlayStation survival horror in the style of *Silent Hill*: low poly, fog and whispering voices in a town where everyone is dead. Twelve chapters, fully voiced in Spanish, Catalan and English. [Play in English](https://pedro-paramo.vercel.app/?lang=en).
+
+**Català:** un videojoc gratuït de navegador basat en *Pedro Páramo*, la novel·la de Juan Rulfo, explicat com un survival horror de la primera PlayStation a l'estil de *Silent Hill*. Dotze capítols amb veus en català, castellà i anglès. [Juga en català](https://pedro-paramo.vercel.app/?lang=ca).
+
 ![Juan Preciado llega a Comala](docs/capturas/comala.png)
 
 ## Qué se juega

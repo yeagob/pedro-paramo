@@ -3,7 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Pedro Páramo</title>
+<title>Pedro Páramo · Survival horror basado en la novela de Juan Rulfo</title>
+<meta name="description" content="Videojuego gratuito de navegador basado en Pedro Páramo, la novela de Juan Rulfo: un survival horror de la primera PlayStation al estilo de Silent Hill. Baja a Comala y escucha a los muertos.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Claude (Anthropic) · Santiago">
+<meta name="theme-color" content="#0b0907">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="alternate" hreflang="es" href="https://pedro-paramo.vercel.app/?lang=es">
+<link rel="alternate" hreflang="ca" href="https://pedro-paramo.vercel.app/?lang=ca">
+<link rel="alternate" hreflang="en" href="https://pedro-paramo.vercel.app/?lang=en">
+<link rel="alternate" hreflang="x-default" href="https://pedro-paramo.vercel.app/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pedro Páramo">
+<meta property="og:title" content="Pedro Páramo · Survival horror basado en la novela de Juan Rulfo">
+<meta property="og:description" content="Videojuego gratuito de navegador basado en Pedro Páramo, la novela de Juan Rulfo: un survival horror de la primera PlayStation al estilo de Silent Hill. Baja a Comala y escucha a los muertos.">
+<meta property="og:url" content="https://pedro-paramo.vercel.app/">
+<meta property="og:image" content="https://pedro-paramo.vercel.app/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Juan Preciado ante una casa de Comala entre la niebla">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="ca_ES">
+<meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pedro Páramo · Survival horror basado en la novela de Juan Rulfo">
+<meta name="twitter:description" content="Videojuego gratuito de navegador basado en Pedro Páramo, la novela de Juan Rulfo: un survival horror de la primera PlayStation al estilo de Silent Hill. Baja a Comala y escucha a los muertos.">
+<meta name="twitter:image" content="https://pedro-paramo.vercel.app/og.jpg">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["VideoGame","SoftwareApplication"],"name":"Pedro Páramo","alternateName":["Pedro Páramo: survival horror","Pedro Páramo videojuego","Pedro Páramo game"],"description":"Videojuego gratuito de navegador basado en Pedro Páramo, la novela de Juan Rulfo, contada como un survival horror de la primera PlayStation al estilo de Silent Hill. Doce capítulos en español, catalán e inglés.","url":"https://pedro-paramo.vercel.app/","image":"https://pedro-paramo.vercel.app/og.jpg","screenshot":["https://pedro-paramo.vercel.app/docs/capturas/comala.png","https://pedro-paramo.vercel.app/docs/capturas/camino.png","https://pedro-paramo.vercel.app/docs/capturas/velorio.png","https://pedro-paramo.vercel.app/docs/capturas/papalote.png","https://pedro-paramo.vercel.app/docs/capturas/viudas.png"],"genre":["Survival horror","Aventura","Ficción literaria"],"applicationCategory":"GameApplication","gamePlatform":"Navegador web","operatingSystem":"Windows, macOS, Linux","playMode":"SinglePlayer","inLanguage":["es","ca","en"],"isAccessibleForFree":true,"offers":{"@type":"Offer","price":"0","priceCurrency":"EUR"},"softwareVersion":"1.0-beta","datePublished":"2026-10-06","author":[{"@type":"Organization","name":"Claude (Anthropic)"},{"@type":"Person","name":"Santiago","url":"https://github.com/yeagob"}],"isBasedOn":{"@type":"Book","name":"Pedro Páramo","author":{"@type":"Person","name":"Juan Rulfo"},"datePublished":"1955","inLanguage":"es"},"keywords":"Pedro Páramo, Juan Rulfo, Comala, survival horror, Silent Hill, PS1, low poly, juego de navegador, literatura mexicana","sameAs":["https://github.com/yeagob/pedro-paramo"]}</script>
 <style>
 :root{--bg:#0b0907;--fg:#e8dcc4;--dim:#9c8f78;--accent:#c9a46a;--panel:rgba(12,9,6,.92);--line:#3a2f22;color-scheme:dark}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#0b0907;--fg:#e8dcc4;--dim:#9c8f78;--accent:#c9a46a;--panel:rgba(12,9,6,.92);--line:#3a2f22}}
@@ -61,6 +88,7 @@ input[type=range]{accent-color:var(--accent);flex:1;min-width:0;max-width:60%}
 </style>
 </head>
 <body>
+<noscript><h1>Pedro Páramo</h1><p>Videojuego gratuito de navegador basado en la novela de Juan Rulfo: un survival horror de la primera PlayStation al estilo de Silent Hill, en doce capítulos y en español, catalán e inglés. Necesita JavaScript y WebGL.</p><p><a href="https://github.com/yeagob/pedro-paramo">Código en GitHub</a></p></noscript>
 <div id="wrap"><div id="stage">
 <canvas id="c" width="640" height="480"></canvas>
 <div id="hint"></div>
@@ -576,7 +604,7 @@ e7:['A nameless soldier, August 1999','To Saint Lucy, for silencing the woman\'s
 e8:['The Nameless One, December 1999','To the Lord of Mercy. I woke on a mortuary slab without remembering my name, my back covered in writing. A talking skull kept me company. I learned what can change the nature of a man.'],
 e9:['S., November 1999','To the Virgin of the Sea, because as a boy I drowned on a beach and in another world I went on living. Nobody knew me there. Not even my mother.'],
 fin:['The year of the fog','To all the saints of 1999: the year when a foggy town, a man in a trench coat, a sailor, a nameless dead man and a drowned boy all arrived together. Comala, too, is made of trembling polygons. Thank you for listening.']};
-Object.assign(I18N.es,{sub:'Un survival horror basado en la novela de Juan Rulfo',newGame:'PARTIDA NUEVA',cont:'CONTINUAR',credits:'CRÉDITOS',repo:'Código en GitHub',saved:'Partida guardada',
+Object.assign(I18N.es,{seoTitle:'Pedro Páramo · Survival horror basado en la novela de Juan Rulfo',seoDesc:'Videojuego gratuito de navegador basado en Pedro Páramo, la novela de Juan Rulfo: un survival horror de la primera PlayStation al estilo de Silent Hill. Baja a Comala y escucha a los muertos.',sub:'Un survival horror basado en la novela de Juan Rulfo',newGame:'PARTIDA NUEVA',cont:'CONTINUAR',credits:'CRÉDITOS',repo:'Código en GitHub',saved:'Partida guardada',
 ch6:'Capítulo 6',ch6t:'Damiana',ch6i:'Eduviges ya no está. Alguien viene a buscar a Juan con un farol.',
 ch7:'Capítulo 7',ch7t:'Donis y su hermana',ch7i:'Una casa a la que se le cayó el techo. Por el hueco se ven las estrellas.',
 ch8:'Capítulo 8',ch8t:'La tumba',ch8i:'Juan Preciado despierta bajo tierra. A su lado alguien habla.',
@@ -613,7 +641,7 @@ s0:{who:'Susana San Juan',title:'La calavera',text:'No era oro, papá. Era una c
 s1:{who:'Susana San Juan',title:'El mar',text:'El mar moja mis tobillos, luego mis rodillas, mis muslos. Rodea mi cintura con su brazo suave. Me baño desnuda en el mar.'},
 s2:{who:'Susana San Juan',title:'Florencio',text:'Florencio era mi marido. No me importa lo que digan: era él quien me abrazaba. Tú no, Pedro Páramo. Tú nunca.'},
 pf:{who:'Pedro Páramo',title:'El camino',text:'Había una luna grande en medio del mundo. Hace mucho que te fuiste, Susana. La luz era igual que ahora.'}});
-Object.assign(I18N.ca,{sub:'Un survival horror basat en la novel·la de Juan Rulfo',newGame:'PARTIDA NOVA',cont:'CONTINUAR',credits:'CRÈDITS',repo:'Codi a GitHub',saved:'Partida desada',
+Object.assign(I18N.ca,{seoTitle:'Pedro Páramo · Survival horror basat en la novel·la de Juan Rulfo',seoDesc:"Videojoc gratuït de navegador basat en Pedro Páramo, la novel·la de Juan Rulfo: un survival horror de la primera PlayStation a l'estil de Silent Hill. Baixa a Comala i escolta els morts.",sub:'Un survival horror basat en la novel·la de Juan Rulfo',newGame:'PARTIDA NOVA',cont:'CONTINUAR',credits:'CRÈDITS',repo:'Codi a GitHub',saved:'Partida desada',
 ch6:'Capítol 6',ch6t:'Damiana',ch6i:'L\'Eduviges ja no hi és. Algú ve a buscar en Juan amb un fanal.',
 ch7:'Capítol 7',ch7t:'Donis i la seva germana',ch7i:'Una casa que ha perdut el sostre. Pel forat es veuen les estrelles.',
 ch8:'Capítol 8',ch8t:'La tomba',ch8i:'Juan Preciado es desperta sota terra. Al seu costat algú parla.',
@@ -650,7 +678,7 @@ s0:{who:'Susana San Juan',title:'La calavera',text:'No era or, pare. Era una cal
 s1:{who:'Susana San Juan',title:'El mar',text:'El mar em mulla els turmells, després els genolls, les cuixes. M\'envolta la cintura amb el seu braç suau. Em banyo nua al mar.'},
 s2:{who:'Susana San Juan',title:'Florencio',text:'En Florencio era el meu marit. No m\'importa el que diguin: era ell qui m\'abraçava. Tu no, Pedro Páramo. Tu mai.'},
 pf:{who:'Pedro Páramo',title:'El camí',text:'Hi havia una lluna grossa al mig del món. Fa molt que te\'n vas anar, Susana. La llum era igual que ara.'}});
-Object.assign(I18N.en,{sub:'A survival horror based on the novel by Juan Rulfo',newGame:'NEW GAME',cont:'CONTINUE',credits:'CREDITS',repo:'Code on GitHub',saved:'Game saved',
+Object.assign(I18N.en,{seoTitle:"Pedro Páramo · A survival horror game based on Juan Rulfo's novel",seoDesc:'Free browser game based on Pedro Páramo, the novel by Juan Rulfo: a first-PlayStation survival horror in the style of Silent Hill. Go down to Comala and listen to the dead.',sub:'A survival horror based on the novel by Juan Rulfo',newGame:'NEW GAME',cont:'CONTINUE',credits:'CREDITS',repo:'Code on GitHub',saved:'Game saved',
 ch6:'Chapter 6',ch6t:'Damiana',ch6i:'Eduviges is gone. Someone comes for Juan with a lantern.',
 ch7:'Chapter 7',ch7t:'Donis and his sister',ch7i:'A house that lost its roof. Through the hole you can see the stars.',
 ch8:'Chapter 8',ch8t:'The grave',ch8i:'Juan Preciado wakes up underground. Someone beside him is talking.',
@@ -687,10 +715,10 @@ s0:{who:'Susana San Juan',title:'The skull',text:'It wasn\'t gold, papa. It was 
 s1:{who:'Susana San Juan',title:'The sea',text:'The sea wets my ankles, then my knees, my thighs. It puts its soft arm around my waist. I bathe naked in the sea.'},
 s2:{who:'Susana San Juan',title:'Florencio',text:'Florencio was my husband. I don\'t care what they say: he was the one who held me. Not you, Pedro Páramo. Never you.'},
 pf:{who:'Pedro Páramo',title:'The road',text:'There was a big moon in the middle of the world. You left a long time ago, Susana. The light was just like it is now.'}});
-let LANG=((navigator.language||'es').slice(0,2));if(!I18N[LANG])LANG='es';
+const QLANG=new URLSearchParams(location.search).get('lang');let LANG=((I18N[QLANG]&&QLANG)||navigator.language||'es').slice(0,2);if(!I18N[LANG])LANG='es';{const l=document.createElement('link');l.rel='canonical';l.href=location.origin+'/'+(I18N[QLANG]?'?lang='+QLANG:'');document.head.appendChild(l)}
 const T=k=>I18N[LANG][k];
 const FR=new Proxy({},{get:(o,k)=>I18N[LANG].fr[k]});
-function applyLang(){document.documentElement.lang=LANG;document.querySelectorAll('[data-i18n]').forEach(e=>e.innerHTML=T(e.dataset.i18n));document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('sel',b.dataset.lang===LANG));renderMoments()}
+function applyLang(){document.documentElement.lang=LANG;document.title=T('seoTitle');document.querySelector('meta[name=description]').content=T('seoDesc');document.querySelectorAll('[data-i18n]').forEach(e=>e.innerHTML=T(e.dataset.i18n));document.querySelectorAll('[data-lang]').forEach(b=>b.classList.toggle('sel',b.dataset.lang===LANG));renderMoments()}
 function renderMoments(){['tMoments','mMomList'].forEach(c=>{const el=$(c);el.innerHTML='';Object.keys(T('mo')).forEach(id=>{const b=document.createElement('button');b.textContent=T('mo')[id];b.onclick=()=>pickMoment(id);el.appendChild(b)})})}
 document.querySelectorAll('[data-lang]').forEach(b=>b.onclick=()=>{LANG=b.dataset.lang;applyLang();loadClips()});
 applyLang();

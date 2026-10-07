@@ -1,4 +1,4 @@
-Object.assign(I18N.es,{sub:'Un survival horror basado en la novela de Juan Rulfo',newGame:'PARTIDA NUEVA',cont:'CONTINUAR',credits:'CRÉDITOS',repo:'Código en GitHub',saved:'Partida guardada',
+Object.assign(I18N.es,{seoTitle:'Pedro Páramo · Survival horror basado en la novela de Juan Rulfo',seoDesc:'Videojuego gratuito de navegador basado en Pedro Páramo, la novela de Juan Rulfo: un survival horror de la primera PlayStation al estilo de Silent Hill. Baja a Comala y escucha a los muertos.',sub:'Un survival horror basado en la novela de Juan Rulfo',newGame:'PARTIDA NUEVA',cont:'CONTINUAR',credits:'CRÉDITOS',repo:'Código en GitHub',saved:'Partida guardada',
 ch6:'Capítulo 6',ch6t:'Damiana',ch6i:'Eduviges ya no está. Alguien viene a buscar a Juan con un farol.',
 ch7:'Capítulo 7',ch7t:'Donis y su hermana',ch7i:'Una casa a la que se le cayó el techo. Por el hueco se ven las estrellas.',
 ch8:'Capítulo 8',ch8t:'La tumba',ch8i:'Juan Preciado despierta bajo tierra. A su lado alguien habla.',
@@ -35,7 +35,7 @@ s0:{who:'Susana San Juan',title:'La calavera',text:'No era oro, papá. Era una c
 s1:{who:'Susana San Juan',title:'El mar',text:'El mar moja mis tobillos, luego mis rodillas, mis muslos. Rodea mi cintura con su brazo suave. Me baño desnuda en el mar.'},
 s2:{who:'Susana San Juan',title:'Florencio',text:'Florencio era mi marido. No me importa lo que digan: era él quien me abrazaba. Tú no, Pedro Páramo. Tú nunca.'},
 pf:{who:'Pedro Páramo',title:'El camino',text:'Había una luna grande en medio del mundo. Hace mucho que te fuiste, Susana. La luz era igual que ahora.'}});
-Object.assign(I18N.ca,{sub:'Un survival horror basat en la novel·la de Juan Rulfo',newGame:'PARTIDA NOVA',cont:'CONTINUAR',credits:'CRÈDITS',repo:'Codi a GitHub',saved:'Partida desada',
+Object.assign(I18N.ca,{seoTitle:'Pedro Páramo · Survival horror basat en la novel·la de Juan Rulfo',seoDesc:"Videojoc gratuït de navegador basat en Pedro Páramo, la novel·la de Juan Rulfo: un survival horror de la primera PlayStation a l'estil de Silent Hill. Baixa a Comala i escolta els morts.",sub:'Un survival horror basat en la novel·la de Juan Rulfo',newGame:'PARTIDA NOVA',cont:'CONTINUAR',credits:'CRÈDITS',repo:'Codi a GitHub',saved:'Partida desada',
 ch6:'Capítol 6',ch6t:'Damiana',ch6i:'L\'Eduviges ja no hi és. Algú ve a buscar en Juan amb un fanal.',
 ch7:'Capítol 7',ch7t:'Donis i la seva germana',ch7i:'Una casa que ha perdut el sostre. Pel forat es veuen les estrelles.',
 ch8:'Capítol 8',ch8t:'La tomba',ch8i:'Juan Preciado es desperta sota terra. Al seu costat algú parla.',
@@ -72,7 +72,7 @@ s0:{who:'Susana San Juan',title:'La calavera',text:'No era or, pare. Era una cal
 s1:{who:'Susana San Juan',title:'El mar',text:'El mar em mulla els turmells, després els genolls, les cuixes. M\'envolta la cintura amb el seu braç suau. Em banyo nua al mar.'},
 s2:{who:'Susana San Juan',title:'Florencio',text:'En Florencio era el meu marit. No m\'importa el que diguin: era ell qui m\'abraçava. Tu no, Pedro Páramo. Tu mai.'},
 pf:{who:'Pedro Páramo',title:'El camí',text:'Hi havia una lluna grossa al mig del món. Fa molt que te\'n vas anar, Susana. La llum era igual que ara.'}});
-Object.assign(I18N.en,{sub:'A survival horror based on the novel by Juan Rulfo',newGame:'NEW GAME',cont:'CONTINUE',credits:'CREDITS',repo:'Code on GitHub',saved:'Game saved',
+Object.assign(I18N.en,{seoTitle:"Pedro Páramo · A survival horror game based on Juan Rulfo's novel",seoDesc:'Free browser game based on Pedro Páramo, the novel by Juan Rulfo: a first-PlayStation survival horror in the style of Silent Hill. Go down to Comala and listen to the dead.',sub:'A survival horror based on the novel by Juan Rulfo',newGame:'NEW GAME',cont:'CONTINUE',credits:'CREDITS',repo:'Code on GitHub',saved:'Game saved',
 ch6:'Chapter 6',ch6t:'Damiana',ch6i:'Eduviges is gone. Someone comes for Juan with a lantern.',
 ch7:'Chapter 7',ch7t:'Donis and his sister',ch7i:'A house that lost its roof. Through the hole you can see the stars.',
 ch8:'Chapter 8',ch8t:'The grave',ch8i:'Juan Preciado wakes up underground. Someone beside him is talking.',
